@@ -1,4 +1,4 @@
-"""pos-ops MCP 서버 — stdio MCP (Copilot CLI / Claude Code 호환).
+"""pos-ops MCP 서버 | stdio MCP (Copilot CLI / Claude Code 호환).
 
 3 tool 노출:
   - get_logs(store, status, limit)

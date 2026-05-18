@@ -1,4 +1,4 @@
-"""운영 티켓 생성 — 로컬 JSONL append (강의 시연용).
+"""운영 티켓 생성 | 로컬 JSONL append (강의 시연용).
 
 학습자 환경 port:
   - GitHub Issues:  gh issue create --title ... --body ...

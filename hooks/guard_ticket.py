@@ -1,4 +1,4 @@
-"""PreToolUse hook ② — create_ticket 호출 전 가드레일.
+"""PreToolUse hook ② | create_ticket 호출 전 가드레일.
 
 발동 시점: mcp__pos-ops__create_ticket tool 호출 직전
 역할:
@@ -31,7 +31,7 @@ category = args.get("category")
 
 errors = []
 if len(title) < 5:
-    errors.append(f"title 너무 짧음 ({len(title)}자) — 5자 이상 필요")
+    errors.append(f"title 너무 짧음 ({len(title)}자) | 5자 이상 필요")
 if priority == "P1-Critical" and len(body) < 30:
     errors.append(f"P1-Critical은 body 30자 이상 필요 (현재 {len(body)}자)")
 
@@ -63,5 +63,5 @@ if errors:
     }))
     sys.exit(2)   # exit 2 = block (Claude Code 표준)
 
-# OK — 통과
+# OK | 통과
 sys.exit(0)

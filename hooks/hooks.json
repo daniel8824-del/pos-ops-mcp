@@ -1,5 +1,5 @@
 {
-  "_comment": "훅 실습용 — 학습자가 본인 Claude Code 또는 Copilot CLI .claude/settings.json 또는 ~/.claude/settings.json 에 복사. POS_OPS_ROOT 환경변수에 본 repo path 지정.",
+  "_comment": "훅 실습용 | 학습자가 본인 Claude Code 또는 Copilot CLI .claude/settings.json 또는 ~/.claude/settings.json 에 복사. POS_OPS_ROOT 환경변수에 본 repo path 지정.",
 
   "hooks": {
     "PostToolUse": [

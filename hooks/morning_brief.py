@@ -1,4 +1,4 @@
-"""SessionStart hook ③ — 세션 시작 시 어제 운영 요약 brief.
+"""SessionStart hook ③ | 세션 시작 시 어제 운영 요약 brief.
 
 발동 시점: Claude Code / Copilot CLI 세션 시작 직후
 역할: 어제 매장별 거래 + 이상 비율 + 미해결 티켓 top 3 요약 출력
@@ -82,7 +82,7 @@ def main():
         return
 
     msg = (
-        f"☀ [HOOK] Morning Brief — {summary['date']}\n"
+        f"☀ [HOOK] Morning Brief | {summary['date']}\n"
         f"  거래 {summary['total']:,} · 매출 ₩{summary['revenue_krw']:,} · "
         f"이상 {summary['anomaly_rate']*100:.1f}%\n"
         f"  주의 매장 Top 3 (이상 비율):\n"

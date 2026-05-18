@@ -1,4 +1,4 @@
-"""Smoke test — 3 script + MCP server 1줄 검증.
+"""Smoke test | 3 script + MCP server 1줄 검증.
 
 실행:
   .venv/bin/python3 tests/test_smoke.py
@@ -24,7 +24,7 @@ def run(script, args):
 
 
 def test_get_logs():
-    """get_logs.py — 최근 5건 + 필터링."""
+    """get_logs.py | 최근 5건 + 필터링."""
     rows = run("get_logs.py", ["--limit", "5"])
     assert len(rows) == 5, f"expected 5 rows, got {len(rows)}"
     assert all("txn_id" in r for r in rows), "missing txn_id"
@@ -39,7 +39,7 @@ def test_get_logs():
 
 
 def test_detect_anomaly():
-    """detect_anomaly.py — 60분 윈도우 + by_store 분포."""
+    """detect_anomaly.py | 60분 윈도우 + by_store 분포."""
     result = run("detect_anomaly.py", ["--window", "60"])
     assert "total" in result and "anomalies" in result
     assert "by_store" in result and "top_issue" in result
@@ -49,7 +49,7 @@ def test_detect_anomaly():
 
 
 def test_create_ticket():
-    """create_ticket.py — JSONL append."""
+    """create_ticket.py | JSONL append."""
     before = (ROOT / "data" / "tickets.jsonl").stat().st_size if (ROOT / "data" / "tickets.jsonl").exists() else 0
     t = run("create_ticket.py", [
         "--title", "smoke test ticket",

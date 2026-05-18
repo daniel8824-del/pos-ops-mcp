@@ -1,4 +1,4 @@
-# pos-ops-mcp — POS 운영 MCP 데모 (standalone)
+# pos-ops-mcp | POS 운영 MCP 데모 (standalone)
 
 **MCP 자체를 처음 배우는 강의용 mini 패키지.**
 3 tool · 3 hook · smoke test 4개. 전부 로컬 · 외부 API 0건.
@@ -11,7 +11,7 @@
 pos-ops-mcp/
 ├─ data/                  시뮬레이션 4 csv (10 매장 · 30 SKU · 24K 거래)
 ├─ scripts/               3 함수 (get_logs · detect_anomaly · create_ticket)
-├─ mcp_server/server.py   stdio MCP — 위 3 함수를 tool로 노출
+├─ mcp_server/server.py   stdio MCP | 위 3 함수를 tool로 노출
 ├─ hooks/                 3 훅 실습 (PostToolUse · PreToolUse · SessionStart)
 └─ tests/test_smoke.py    4 smoke 테스트 (3 script + MCP server)
 ```
@@ -77,17 +77,17 @@ python3 -m venv .venv && .venv/bin/pip install mcp
 훅 실습 시연 흐름:
 
 ```bash
-# 1. 가드레일 테스트 — 짧은 title은 차단됨
+# 1. 가드레일 테스트 | 짧은 title은 차단됨
 echo '{"tool_args":{"title":"ab","body":"."}}' | python3 hooks/guard_ticket.py
 # → exit 2 + reason
 
-# 2. 알림 테스트 — top_issue + count payload
+# 2. 알림 테스트 | top_issue + count payload
 echo '{"tool_result":{"top_issue":"POS_DOWN","anomalies":{"POS_DOWN":15},"by_store":{"SEL-001":{}}}}' | python3 hooks/on_anomaly.py
 # → "🚨 [HOOK] POS 운영 알림 ..." 출력
 
-# 3. 세션 brief — 어제 요약 (시뮬레이션 데이터의 latest day 기준)
+# 3. 세션 brief | 어제 요약 (시뮬레이션 데이터의 latest day 기준)
 python3 hooks/morning_brief.py
-# → "☀ [HOOK] Morning Brief — 2026-05-13 ..."
+# → "☀ [HOOK] Morning Brief | 2026-05-13 ..."
 ```
 
 ## 학습자 본인 환경 port (Day 5 후반)
